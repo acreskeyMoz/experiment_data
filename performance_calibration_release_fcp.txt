@@ -1,0 +1,94 @@
+acreskey@MacBook-Pro-10 plot_data % python3 read_csv_plot_metrics.py data/perf_calibration_release_fcp/merged_file.csv
+pageload data
+           fcp_time       branch
+0              1315  treatment-a
+1               849      control
+2               340      control
+3               552  treatment-c
+4              1010  treatment-c
+...             ...          ...
+906972188       449  treatment-c
+906972189      2024  treatment-a
+906972190       705  treatment-c
+906972191       899      control
+906972192       571  treatment-a
+
+[906972193 rows x 2 columns]
+Initial count, all branches: 906972193
+Count after zero fcp_time filtered: 906972134
+pageload data
+           fcp_time       branch
+0              1315  treatment-a
+1               849      control
+2               340      control
+3               552  treatment-c
+4              1010  treatment-c
+...             ...          ...
+906972188       449  treatment-c
+906972189      2024  treatment-a
+906972190       705  treatment-c
+906972191       899      control
+906972192       571  treatment-a
+
+[906972134 rows x 2 columns]
+pageload data after removing entries over 15000
+           fcp_time       branch
+0              1315  treatment-a
+1               849      control
+2               340      control
+3               552  treatment-c
+4              1010  treatment-c
+...             ...          ...
+906972188       449  treatment-c
+906972189      2024  treatment-a
+906972190       705  treatment-c
+906972191       899      control
+906972192       571  treatment-a
+
+[904456100 rows x 2 columns]
+            fcp_time       
+                mean median
+branch                     
+control        982.0  619.0
+treatment-a    989.0  622.0
+treatment-b    988.0  623.0
+treatment-c    987.0  619.0
+            fcp_time                                                                         
+                0.05   0.10   0.20   0.30   0.40   0.50   0.60   0.70    0.80    0.90    0.95
+branch                                                                                       
+control        169.0  216.0  300.0  390.0  495.0  619.0  777.0  993.0  1328.0  2033.0  2947.0
+treatment-a    173.0  219.0  302.0  392.0  497.0  622.0  781.0  997.0  1336.0  2047.0  2978.0
+treatment-b    173.0  218.0  302.0  393.0  499.0  623.0  781.0  998.0  1331.0  2041.0  2974.0
+treatment-c    172.0  218.0  301.0  390.0  495.0  619.0  778.0  996.0  1333.0  2044.0  2973.0
+               treatment-a_quantiles  abs_diff_treatment-a  % diff_treatment-a  treatment-c_quantiles  abs_diff_treatment-c  % diff_treatment-c  treatment-b_quantiles  abs_diff_treatment-b  % diff_treatment-b
+fcp_time 0.05                  173.0                   4.0            2.366864                  172.0                   3.0            1.775148                  173.0                   4.0            2.366864
+         0.10                  219.0                   3.0            1.388889                  218.0                   2.0            0.925926                  218.0                   2.0            0.925926
+         0.20                  302.0                   2.0            0.666667                  301.0                   1.0            0.333333                  302.0                   2.0            0.666667
+         0.30                  392.0                   2.0            0.512821                  390.0                   0.0            0.000000                  393.0                   3.0            0.769231
+         0.40                  497.0                   2.0            0.404040                  495.0                   0.0            0.000000                  499.0                   4.0            0.808081
+         0.50                  622.0                   3.0            0.484653                  619.0                   0.0            0.000000                  623.0                   4.0            0.646204
+         0.60                  781.0                   4.0            0.514801                  778.0                   1.0            0.128700                  781.0                   4.0            0.514801
+         0.70                  997.0                   4.0            0.402820                  996.0                   3.0            0.302115                  998.0                   5.0            0.503525
+         0.80                 1336.0                   8.0            0.602410                 1333.0                   5.0            0.376506                 1331.0                   3.0            0.225904
+         0.90                 2047.0                  14.0            0.688637                 2044.0                  11.0            0.541072                 2041.0                   8.0            0.393507
+         0.95                 2978.0                  31.0            1.051917                 2973.0                  26.0            0.882253                 2974.0                  27.0            0.916186
+KS Test for column fcp_time:
+treatment-a vs control: KS Statistic = 0.003846822556946905, p-value = 0.0
+treatment-a vs treatment-c: KS Statistic = 0.0023972671575074322, p-value = 0.0
+treatment-a vs treatment-b: KS Statistic = 0.0013906744829723094, p-value = 1.980725846771661e-189
+control vs treatment-c: KS Statistic = 0.0029852273604146634, p-value = 0.0
+control vs treatment-b: KS Statistic = 0.00361720324279885, p-value = 0.0
+treatment-c vs treatment-b: KS Statistic = 0.0035570923305148217, p-value = 0.0
+Mann-Whitney-U for fcp_time:
+Mann-Whitney-U for treatment-a vs control, fcp_time:
+statistic: 2.566315496652507e+16, p-value: 0.0
+Mann-Whitney-U for treatment-a vs treatment-c, fcp_time:
+statistic: 2.5541814670965056e+16, p-value: 0.0
+Mann-Whitney-U for treatment-a vs treatment-b, fcp_time:
+statistic: 2.530871172287257e+16, p-value: 4.0463660435380526e-13
+Mann-Whitney-U for control vs treatment-c, fcp_time:
+statistic: 2.5758782610231696e+16, p-value: 7.758503059626214e-293
+Mann-Whitney-U for control vs treatment-b, fcp_time:
+statistic: 2.5523387666678224e+16, p-value: 0.0
+Mann-Whitney-U for treatment-c vs treatment-b, fcp_time:
+statistic: 2.550363425508177e+16, p-value: 0.0

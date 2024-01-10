@@ -1,0 +1,75 @@
+acreskey@MacBook-Pro-10 plot_data % python3 read_csv_plot_metrics.py data/omt_beta_fcp/omt_beta_fcp.csv 
+pageload data
+          fcp_time       branch
+0              779      control
+1              202      control
+2              269      control
+3              213      control
+4             1474  treatment-a
+...            ...          ...
+88712093       809      control
+88712094       702  treatment-a
+88712095       667      control
+88712096       899  treatment-a
+88712097      4900  treatment-a
+
+[88712098 rows x 2 columns]
+Initial count, all branches: 88712098
+Count after zero fcp_time filtered: 88712095
+pageload data
+          fcp_time       branch
+0              779      control
+1              202      control
+2              269      control
+3              213      control
+4             1474  treatment-a
+...            ...          ...
+88712093       809      control
+88712094       702  treatment-a
+88712095       667      control
+88712096       899  treatment-a
+88712097      4900  treatment-a
+
+[88712095 rows x 2 columns]
+pageload data after removing entries over 15000
+          fcp_time       branch
+0              779      control
+1              202      control
+2              269      control
+3              213      control
+4             1474  treatment-a
+...            ...          ...
+88712093       809      control
+88712094       702  treatment-a
+88712095       667      control
+88712096       899  treatment-a
+88712097      4900  treatment-a
+
+[88002459 rows x 2 columns]
+            fcp_time       
+                mean median
+branch                     
+control       1182.0  672.0
+treatment-a   1183.0  673.0
+            fcp_time                                                                          
+                0.05   0.10   0.20   0.30   0.40   0.50   0.60    0.70    0.80    0.90    0.95
+branch                                                                                        
+control        173.0  226.0  320.0  419.0  533.0  672.0  858.0  1133.0  1599.0  2529.0  3857.0
+treatment-a    172.0  227.0  322.0  419.0  532.0  673.0  859.0  1129.0  1575.0  2554.0  3907.0
+               treatment-a_quantiles  abs_diff_treatment-a  % diff_treatment-a
+fcp_time 0.05                  172.0                  -1.0           -0.578035
+         0.10                  227.0                   1.0            0.442478
+         0.20                  322.0                   2.0            0.625000
+         0.30                  419.0                   0.0            0.000000
+         0.40                  532.0                  -1.0           -0.187617
+         0.50                  673.0                   1.0            0.148810
+         0.60                  859.0                   1.0            0.116550
+         0.70                 1129.0                  -4.0           -0.353045
+         0.80                 1575.0                 -24.0           -1.500938
+         0.90                 2554.0                  25.0            0.988533
+         0.95                 3907.0                  50.0            1.296344
+KS Test for column fcp_time:
+control vs treatment-a: KS Statistic = 0.004606659243275524, p-value = 0.0
+Mann-Whitney-U for fcp_time:
+Mann-Whitney-U for control vs treatment-a, fcp_time:
+statistic: 968493466349285.5, p-value: 5.013682827744795e-06

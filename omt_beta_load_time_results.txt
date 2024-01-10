@@ -1,0 +1,28 @@
+[118177280 rows x 2 columns]
+              value       
+               mean median
+branch                    
+control      1652.0  949.0
+treatment-a  1653.0  950.0
+             value                                                                           
+              0.05   0.10   0.20   0.30   0.40   0.50    0.60    0.70    0.80    0.90    0.95
+branch                                                                                       
+control      168.0  254.0  405.0  561.0  732.0  949.0  1247.0  1684.0  2395.0  3778.0  5648.0
+treatment-a  151.0  242.0  391.0  549.0  727.0  950.0  1256.0  1689.0  2386.0  3808.0  5672.0
+            treatment-a_quantiles  abs_diff_treatment-a  % diff_treatment-a
+value 0.05                  151.0                 -17.0          -10.119048
+      0.10                  242.0                 -12.0           -4.724409
+      0.20                  391.0                 -14.0           -3.456790
+      0.30                  549.0                 -12.0           -2.139037
+      0.40                  727.0                  -5.0           -0.683060
+      0.50                  950.0                   1.0            0.105374
+      0.60                 1256.0                   9.0            0.721732
+      0.70                 1689.0                   5.0            0.296912
+      0.80                 2386.0                  -9.0           -0.375783
+      0.90                 3808.0                  30.0            0.794071
+      0.95                 5672.0                  24.0            0.424929
+KS Test for column value:
+control vs treatment-a: KS Statistic = 0.008775301048854899, p-value = 0.0
+Mann-Whitney-U for value:
+Mann-Whitney-U for control vs treatment-a, value:
+statistic: 1753994622502590.0, p-value: 0.0

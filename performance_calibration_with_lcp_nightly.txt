@@ -1,0 +1,158 @@
+acreskey@MacBook-Pro-10 plot_data % python3 read_csv_plot_metrics.py ./results/perf_calibration_with_lcp.csv
+pageload data
+          load_time  fcp_time  lcp_time       branch
+0               298      96.0     251.0  treatment-b
+1              2075    1607.0    1922.0      control
+2              2949       NaN       NaN  treatment-a
+3              1419     711.0     726.0  treatment-a
+4               467       NaN       NaN  treatment-a
+...             ...       ...       ...          ...
+27175503        627     437.0     425.0      control
+27175504        487     131.0     144.0  treatment-c
+27175505        227       NaN       NaN  treatment-b
+27175506        523       NaN     519.0  treatment-b
+27175507        771     427.0     527.0  treatment-a
+
+[27175508 rows x 4 columns]
+Initial count, all branches: 27175508
+Count after zero load_time filtered: 27175508
+Count after zero fcp_time filtered: 22292417
+Count after zero lcp_time filtered: 21803981
+pageload data
+          load_time  fcp_time  lcp_time       branch
+0               298      96.0     251.0  treatment-b
+1              2075    1607.0    1922.0      control
+3              1419     711.0     726.0  treatment-a
+5              6316    4649.0    4844.0  treatment-c
+6              3316    2965.0    2950.0  treatment-b
+...             ...       ...       ...          ...
+27175498      10359    7340.0    7750.0  treatment-c
+27175499       4360    4231.0    4199.0  treatment-c
+27175503        627     437.0     425.0      control
+27175504        487     131.0     144.0  treatment-c
+27175507        771     427.0     527.0  treatment-a
+
+[21803981 rows x 4 columns]
+pageload data after removing entries over 15000
+          load_time  fcp_time  lcp_time       branch
+0               298      96.0     251.0  treatment-b
+1              2075    1607.0    1922.0      control
+3              1419     711.0     726.0  treatment-a
+5              6316    4649.0    4844.0  treatment-c
+6              3316    2965.0    2950.0  treatment-b
+...             ...       ...       ...          ...
+27175498      10359    7340.0    7750.0  treatment-c
+27175499       4360    4231.0    4199.0  treatment-c
+27175503        627     437.0     425.0      control
+27175504        487     131.0     144.0  treatment-c
+27175507        771     427.0     527.0  treatment-a
+
+[21645486 rows x 4 columns]
+            load_time         fcp_time        lcp_time       
+                 mean  median     mean median     mean median
+branch                                                       
+control        1624.0  1092.0    922.0  614.0   1060.0  722.0
+treatment-a    1594.0  1104.0    918.0  620.0   1055.0  737.0
+treatment-b    1627.0  1105.0    893.0  593.0   1053.0  723.0
+treatment-c    1597.0  1123.0    905.0  611.0   1048.0  741.0
+            load_time                                                                             fcp_time                                                                           lcp_time                                                                          
+                 0.05   0.10   0.20   0.30   0.40    0.50    0.60    0.70    0.80    0.90    0.95     0.05   0.10   0.20   0.30   0.40   0.50   0.60    0.70    0.80    0.90    0.95     0.05   0.10   0.20   0.30   0.40   0.50   0.60    0.70    0.80    0.90    0.95
+branch                                                                                                                                                                                                                                                                 
+control         323.0  431.0  586.0  724.0  887.0  1092.0  1359.0  1708.0  2229.0  3367.0  4668.0    179.0  219.0  297.0  385.0  488.0  614.0  763.0   975.0  1296.0  1874.0  2629.0    188.0  251.0  372.0  478.0  593.0  722.0  895.0  1132.0  1481.0  2117.0  2979.0
+treatment-a     321.0  423.0  566.0  705.0  890.0  1104.0  1312.0  1638.0  2162.0  3285.0  4621.0    178.0  225.0  307.0  387.0  489.0  620.0  785.0  1010.0  1257.0  1849.0  2594.0    198.0  270.0  376.0  479.0  594.0  737.0  934.0  1121.0  1430.0  2088.0  2950.0
+treatment-b     293.0  383.0  555.0  703.0  885.0  1105.0  1372.0  1734.0  2275.0  3371.0  4680.0    166.0  205.0  284.0  370.0  471.0  593.0  746.0   943.0  1236.0  1818.0  2564.0    174.0  239.0  369.0  475.0  586.0  723.0  890.0  1111.7  1443.0  2124.0  2995.0
+treatment-c     308.0  408.0  565.0  716.0  903.0  1123.0  1354.0  1676.0  2204.0  3253.0  4532.0    175.0  219.0  297.0  380.0  483.0  611.0  776.0   999.0  1253.0  1799.0  2553.0    190.0  259.0  371.0  478.0  596.0  741.0  923.0  1138.0  1416.0  2066.0  2915.0
+                treatment-b_quantiles  abs_diff_treatment-b  % diff_treatment-b  treatment-a_quantiles  abs_diff_treatment-a  % diff_treatment-a  treatment-c_quantiles  abs_diff_treatment-c  % diff_treatment-c
+load_time 0.05                  293.0                 -30.0           -9.287926                  321.0                  -2.0           -0.619195                  308.0                 -15.0           -4.643963
+          0.10                  383.0                 -48.0          -11.136891                  423.0                  -8.0           -1.856148                  408.0                 -23.0           -5.336427
+          0.20                  555.0                 -31.0           -5.290102                  566.0                 -20.0           -3.412969                  565.0                 -21.0           -3.583618
+          0.30                  703.0                 -21.0           -2.900552                  705.0                 -19.0           -2.624309                  716.0                  -8.0           -1.104972
+          0.40                  885.0                  -2.0           -0.225479                  890.0                   3.0            0.338219                  903.0                  16.0            1.803833
+          0.50                 1105.0                  13.0            1.190476                 1104.0                  12.0            1.098901                 1123.0                  31.0            2.838828
+          0.60                 1372.0                  13.0            0.956586                 1312.0                 -47.0           -3.458425                 1354.0                  -5.0           -0.367918
+          0.70                 1734.0                  26.0            1.522248                 1638.0                 -70.0           -4.098361                 1676.0                 -32.0           -1.873536
+          0.80                 2275.0                  46.0            2.063706                 2162.0                 -67.0           -3.005832                 2204.0                 -25.0           -1.121579
+          0.90                 3371.0                   4.0            0.118800                 3285.0                 -82.0           -2.435402                 3253.0                -114.0           -3.385803
+          0.95                 4680.0                  12.0            0.257069                 4621.0                 -47.0           -1.006855                 4532.0                -136.0           -2.913453
+fcp_time  0.05                  166.0                 -13.0           -7.262570                  178.0                  -1.0           -0.558659                  175.0                  -4.0           -2.234637
+          0.10                  205.0                 -14.0           -6.392694                  225.0                   6.0            2.739726                  219.0                   0.0            0.000000
+          0.20                  284.0                 -13.0           -4.377104                  307.0                  10.0            3.367003                  297.0                   0.0            0.000000
+          0.30                  370.0                 -15.0           -3.896104                  387.0                   2.0            0.519481                  380.0                  -5.0           -1.298701
+          0.40                  471.0                 -17.0           -3.483607                  489.0                   1.0            0.204918                  483.0                  -5.0           -1.024590
+          0.50                  593.0                 -21.0           -3.420195                  620.0                   6.0            0.977199                  611.0                  -3.0           -0.488599
+          0.60                  746.0                 -17.0           -2.228047                  785.0                  22.0            2.883355                  776.0                  13.0            1.703801
+          0.70                  943.0                 -32.0           -3.282051                 1010.0                  35.0            3.589744                  999.0                  24.0            2.461538
+          0.80                 1236.0                 -60.0           -4.629630                 1257.0                 -39.0           -3.009259                 1253.0                 -43.0           -3.317901
+          0.90                 1818.0                 -56.0           -2.988260                 1849.0                 -25.0           -1.334045                 1799.0                 -75.0           -4.002134
+          0.95                 2564.0                 -65.0           -2.472423                 2594.0                 -35.0           -1.331305                 2553.0                 -76.0           -2.890833
+lcp_time  0.05                  174.0                 -14.0           -7.446809                  198.0                  10.0            5.319149                  190.0                   2.0            1.063830
+          0.10                  239.0                 -12.0           -4.780876                  270.0                  19.0            7.569721                  259.0                   8.0            3.187251
+          0.20                  369.0                  -3.0           -0.806452                  376.0                   4.0            1.075269                  371.0                  -1.0           -0.268817
+          0.30                  475.0                  -3.0           -0.627615                  479.0                   1.0            0.209205                  478.0                   0.0            0.000000
+          0.40                  586.0                  -7.0           -1.180438                  594.0                   1.0            0.168634                  596.0                   3.0            0.505902
+          0.50                  723.0                   1.0            0.138504                  737.0                  15.0            2.077562                  741.0                  19.0            2.631579
+          0.60                  890.0                  -5.0           -0.558659                  934.0                  39.0            4.357542                  923.0                  28.0            3.128492
+          0.70                 1111.7                 -20.3           -1.793286                 1121.0                 -11.0           -0.971731                 1138.0                   6.0            0.530035
+          0.80                 1443.0                 -38.0           -2.565834                 1430.0                 -51.0           -3.443619                 1416.0                 -65.0           -4.388926
+          0.90                 2124.0                   7.0            0.330657                 2088.0                 -29.0           -1.369863                 2066.0                 -51.0           -2.409069
+          0.95                 2995.0                  16.0            0.537093                 2950.0                 -29.0           -0.973481                 2915.0                 -64.0           -2.148372
+KS Test for column load_time:
+treatment-b vs control: KS Statistic = 0.0244397910787022, p-value = 0.0
+treatment-b vs treatment-a: KS Statistic = 0.02482180232710607, p-value = 0.0
+treatment-b vs treatment-c: KS Statistic = 0.014926619689237586, p-value = 0.0
+control vs treatment-a: KS Statistic = 0.01826121169617101, p-value = 0.0
+control vs treatment-c: KS Statistic = 0.014595203480179647, p-value = 0.0
+treatment-a vs treatment-c: KS Statistic = 0.0188074109557671, p-value = 0.0
+KS Test for column fcp_time:
+treatment-b vs control: KS Statistic = 0.018450796445473594, p-value = 0.0
+treatment-b vs treatment-a: KS Statistic = 0.03148727442075672, p-value = 0.0
+treatment-b vs treatment-c: KS Statistic = 0.02315289690251454, p-value = 0.0
+control vs treatment-a: KS Statistic = 0.018112661168171784, p-value = 0.0
+control vs treatment-c: KS Statistic = 0.01670880711505307, p-value = 0.0
+treatment-a vs treatment-c: KS Statistic = 0.012663466749240404, p-value = 0.0
+KS Test for column lcp_time:
+treatment-b vs control: KS Statistic = 0.014891920528868181, p-value = 0.0
+treatment-b vs treatment-a: KS Statistic = 0.023283829878842963, p-value = 0.0
+treatment-b vs treatment-c: KS Statistic = 0.018407256049900567, p-value = 0.0
+control vs treatment-a: KS Statistic = 0.01867895724358981, p-value = 0.0
+control vs treatment-c: KS Statistic = 0.015614834658783994, p-value = 0.0
+treatment-a vs treatment-c: KS Statistic = 0.009990295140011846, p-value = 2.214124002116931e-233
+Mann-Whitney-U for load_time:
+Mann-Whitney-U for treatment-b vs control, load_time:
+statistic: 14655841904406.5, p-value: 1.4234678981097047e-96
+Mann-Whitney-U for treatment-b vs treatment-a, load_time:
+statistic: 14006133458727.0, p-value: 1.7175553862002727e-80
+Mann-Whitney-U for treatment-b vs treatment-c, load_time:
+statistic: 13376535961040.0, p-value: 0.009275124722371424
+Mann-Whitney-U for control vs treatment-a, load_time:
+statistic: 16159601822784.5, p-value: 0.0
+Mann-Whitney-U for control vs treatment-c, load_time:
+statistic: 15426222760992.5, p-value: 1.2157193837789466e-70
+Mann-Whitney-U for treatment-a vs treatment-c, load_time:
+statistic: 14326980720290.0, p-value: 1.9871141488287048e-123
+Mann-Whitney-U for fcp_time:
+Mann-Whitney-U for treatment-b vs control, fcp_time:
+statistic: 14380428315394.5, p-value: 0.0
+Mann-Whitney-U for treatment-b vs treatment-a, fcp_time:
+statistic: 13443975001384.5, p-value: 0.0
+Mann-Whitney-U for treatment-b vs treatment-c, fcp_time:
+statistic: 13080022546082.5, p-value: 0.0
+Mann-Whitney-U for control vs treatment-a, fcp_time:
+statistic: 15810165394206.0, p-value: 3.0876670171098455e-107
+Mann-Whitney-U for control vs treatment-c, fcp_time:
+statistic: 15380417109997.5, p-value: 4.9923564372831075e-20
+Mann-Whitney-U for treatment-a vs treatment-c, fcp_time:
+statistic: 14598333606839.5, p-value: 7.552867832110175e-194
+Mann-Whitney-U for lcp_time:
+Mann-Whitney-U for treatment-b vs control, lcp_time:
+statistic: 14642733994766.5, p-value: 6.054286618494646e-121
+Mann-Whitney-U for treatment-b vs treatment-a, lcp_time:
+statistic: 13714665983704.0, p-value: 0.0
+Mann-Whitney-U for treatment-b vs treatment-c, lcp_time:
+statistic: 13238927435415.5, p-value: 3.7417657468707196e-214
+Mann-Whitney-U for control vs treatment-a, lcp_time:
+statistic: 15833854331658.0, p-value: 7.024669223104545e-70
+Mann-Whitney-U for control vs treatment-c, lcp_time:
+statistic: 15287963785719.5, p-value: 2.309177594379592e-16
+Mann-Whitney-U for treatment-a vs treatment-c, lcp_time:
+statistic: 14489421307266.0, p-value: 1.0750508746286674e-16
